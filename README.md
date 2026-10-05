@@ -1,1 +1,428 @@
-# Aura-s-Portfolio
+[2aura_portfolio.html](https://github.com/user-attachments/files/33075508/2aura_portfolio.html)
+# Aura-s-Portfolio<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2aura — Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Soft, light ambient sky background */
+    .bg-light-ambient {
+      background-color: #f8fafc;
+      background-image: 
+        radial-gradient(at 15% 10%, rgba(224, 242, 254, 0.9) 0px, transparent 50%),
+        radial-gradient(at 85% 15%, rgba(238, 242, 255, 0.85) 0px, transparent 55%),
+        radial-gradient(at 50% 50%, rgba(241, 245, 249, 0.5) 0px, transparent 60%),
+        radial-gradient(at 80% 85%, rgba(224, 242, 254, 0.6) 0px, transparent 50%),
+        radial-gradient(at 20% 90%, rgba(243, 232, 255, 0.5) 0px, transparent 50%);
+    }
+
+    .pixelated {
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+    }
+
+    .card-surface {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px -2px rgba(148, 163, 184, 0.12), 0 2px 6px -1px rgba(148, 163, 184, 0.08);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card-surface:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -4px rgba(148, 163, 184, 0.18), 0 4px 10px -2px rgba(148, 163, 184, 0.1);
+    }
+
+    .btn-brand {
+      background-color: #0284c7;
+      transition: all 0.15s ease;
+    }
+    .btn-brand:hover {
+      background-color: #0369a1;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+  </style>
+</head>
+
+<body class="bg-light-ambient min-h-screen flex flex-col justify-between selection:bg-sky-500 selection:text-white">
+
+  <header class="w-full max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-sm shadow-emerald-400"></div>
+      <span class="font-extrabold tracking-tight text-slate-900 text-base">2aura</span>
+      <span class="text-xs px-2 py-0.5 rounded-md bg-sky-100 text-sky-800 font-semibold border border-sky-200">Portfolio</span>
+    </div>
+
+    <!-- Quick Discord copy chip -->
+    <button onclick="copyDiscord()" class="group flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-sm hover:border-sky-300 hover:bg-sky-50/50 transition-all text-xs">
+      <span class="text-slate-500">Discord:</span>
+      <span class="font-mono-code font-bold text-sky-700">@2aura.</span>
+      <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-sky-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+      </svg>
+    </button>
+  </header>
+
+  <main class="w-full max-w-3xl mx-auto px-6 py-8 text-center flex flex-col items-center">
+    
+    <!-- Squircle Profile Avatar (Pixel Chicken) -->
+    <div class="mb-5 relative group">
+      <div class="w-28 h-28 rounded-[26px] bg-sky-500 p-1.5 shadow-xl shadow-sky-500/20 ring-4 ring-white border border-sky-300 overflow-hidden flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
+        <svg class="w-full h-full pixelated rounded-[20px]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Sky Blue Background -->
+          <rect width="16" height="16" fill="#1e88e5"/>
+          <!-- Chicken Head Base -->
+          <rect x="4" y="2" width="8" height="12" fill="#FFFFFF"/>
+          <rect x="4" y="2" width="8" height="2" fill="#DDE3EA"/>
+          <!-- Eyes -->
+          <rect x="4" y="4" width="2" height="2" fill="#111827"/>
+          <rect x="10" y="4" width="2" height="2" fill="#111827"/>
+          <rect x="6" y="4" width="4" height="2" fill="#FFFFFF"/>
+          <!-- Beak (Orange/Yellow) -->
+          <rect x="4" y="6" width="8" height="2" fill="#F59E0B"/>
+          <rect x="4" y="8" width="8" height="2" fill="#D97706"/>
+          <!-- Red Wattle -->
+          <rect x="6" y="10" width="4" height="4" fill="#DC2626"/>
+          <!-- Lower White Trim -->
+          <rect x="4" y="12" width="2" height="2" fill="#E2E8F0"/>
+          <rect x="10" y="12" width="2" height="2" fill="#E2E8F0"/>
+        </svg>
+      </div>
+      <div class="absolute -bottom-1 -right-1 bg-emerald-500 text-white rounded-full p-1 border-2 border-white shadow-sm" title="Online / Open">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Title & Handle -->
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+      2aura
+    </h1>
+    <span class="mt-1 text-xs uppercase tracking-[0.25em] font-semibold text-slate-500 font-mono-code">
+      AKA 2AURA
+    </span>
+
+    <!-- Dot Separated Roles -->
+    <div class="mt-3.5 flex flex-wrap items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-600">
+      <span>Content Creator</span>
+      <span class="text-sky-500 font-black">•</span>
+      <span>Video Editor</span>
+      <span class="text-sky-500 font-black">•</span>
+      <span>UI & Thumbnails</span>
+      <span class="text-sky-500 font-black">•</span>
+      <span>Game Tester</span>
+    </div>
+
+    <!-- Concise Bio -->
+    <p class="mt-4 text-sm sm:text-base text-slate-600 max-w-xl leading-relaxed font-normal">
+      Roblox content creator with <strong class="text-slate-900 font-semibold">20K+ subscribers</strong> and video editor with <strong class="text-slate-900 font-semibold">50M+ views</strong> across personal & client channels. Contributed QA tester to <strong class="text-slate-900 font-semibold">1B+ visits</strong> on Garden Tower Defense (<span class="font-mono-code text-sky-700">@GTD</span>).
+    </p>
+
+    <!-- CTAs -->
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+      <button onclick="openCommissionModal()" class="btn-brand px-6 py-2.5 rounded-xl text-white font-semibold text-sm shadow-sm flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+        </svg>
+        Commission Me
+      </button>
+
+      <button onclick="copyDiscord()" class="px-5 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 font-semibold text-sm hover:border-slate-300 hover:bg-slate-50 transition-all shadow-sm flex items-center gap-2">
+        <svg class="w-4 h-4 text-sky-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+        </svg>
+        Copy Discord
+      </button>
+    </div>
+
+    <!-- Working Across Tag & Badges -->
+    <div class="mt-8 flex flex-col items-center gap-2">
+      <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Working Across</span>
+      <div class="flex items-center gap-2">
+        <div class="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-xs font-bold text-emerald-700 shadow-sm flex items-center gap-1.5" title="Garden Tower Defense">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          GTD
+        </div>
+        <div class="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-xs font-bold text-red-600 shadow-sm flex items-center gap-1.5" title="YouTube">
+          <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+          YouTube
+        </div>
+        <div class="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-xs font-bold text-sky-700 shadow-sm flex items-center gap-1.5" title="Roblox">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
+          Roblox
+        </div>
+        <div class="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-xs font-bold text-indigo-700 shadow-sm flex items-center gap-1.5" title="Discord">
+          <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+          Discord
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="w-full border-y border-slate-200/80 bg-white/70 backdrop-blur-sm py-6">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+
+        <!-- Stat 1 -->
+        <div class="flex flex-col items-center p-2">
+          <span class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">1B+</span>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mt-1">Roblox Visits</span>
+          <span class="text-[11px] text-sky-700 font-semibold mt-0.5">Contributed @ GTD</span>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="flex flex-col items-center p-2">
+          <span class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">50M+</span>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mt-1">Video Views</span>
+          <span class="text-[11px] text-slate-600 mt-0.5">Edited & Contributed</span>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="flex flex-col items-center p-2">
+          <span class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">20K+</span>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mt-1">Subscribers</span>
+          <span class="text-[11px] text-slate-600 mt-0.5">Content Creator</span>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="flex flex-col items-center p-2">
+          <span class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">70K+</span>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mt-1">Channel Reach</span>
+          <span class="text-[11px] text-slate-600 mt-0.5">Editor Contributor</span>
+        </div>
+
+        <!-- Stat 5 -->
+        <div class="col-span-2 md:col-span-1 flex flex-col items-center p-2">
+          <span class="text-3xl sm:text-4xl font-extrabold text-sky-600 tracking-tight">Open</span>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mt-1">Commissions</span>
+          <span class="text-[11px] text-emerald-600 font-semibold mt-0.5">Taking Requests</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full max-w-5xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Card 1: Video Editing -->
+      <div class="card-surface p-6 rounded-2xl flex flex-col justify-between">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 border border-sky-200 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-sky-600">01 &bull; Production</span>
+          <h2 class="text-lg font-bold text-slate-900 mt-1 mb-2">Video Editing</h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            High-retention editing for longform & shorts. Optimized pacing, sound effects, and motion design that have generated over <strong class="text-slate-800">50 million views</strong>.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+          <span>YT Shorts & Longform</span>
+          <span class="text-slate-900 font-semibold">50M+ Views</span>
+        </div>
+      </div>
+
+      <!-- Card 2: UI Design & Thumbnails -->
+      <div class="card-surface p-6 rounded-2xl flex flex-col justify-between">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 border border-amber-200 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600">02 &bull; Visuals</span>
+          <h2 class="text-lg font-bold text-slate-900 mt-1 mb-2">UI & Thumbnail Design</h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Eye-catching YouTube thumbnails engineered for maximum CTR, along with clean, intuitive game user interfaces (UI) and layout assets.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+          <span>High-CTR Covers & HUDs</span>
+          <span class="text-slate-900 font-semibold">Custom Design</span>
+        </div>
+      </div>
+
+      <!-- Card 3: QA & Community -->
+      <div class="card-surface p-6 rounded-2xl flex flex-col justify-between">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-600">03 &bull; Quality & Staff</span>
+          <h2 class="text-lg font-bold text-slate-900 mt-1 mb-2">QA Testing & Moderation</h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Experienced game tester for Garden Tower Defense (<strong class="text-slate-800">1B+ visits</strong>), catching balance & gameplay bugs. Discord community moderation for <strong class="text-slate-800">3K+ member</strong> servers.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+          <span>GTD Game Tester</span>
+          <span class="text-slate-900 font-semibold">1B+ Visits</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-10 card-surface rounded-2xl p-6 md:p-8 border-sky-200 bg-gradient-to-r from-white via-sky-50/30 to-indigo-50/30">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="max-w-xl">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-sky-100 text-sky-800 text-xs font-bold mb-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-600 animate-ping"></span>
+            Direct Inquiries
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Ready to work together?</h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">
+            Send a Discord friend request or message to <strong class="text-slate-900 font-mono-code font-bold">@2aura.</strong> for thumbnail commissions, video editing, game testing, or promotion inquiries.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <button onclick="copyCommissionTemplate()" class="flex-1 md:flex-initial px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-700 hover:border-slate-400 hover:bg-slate-50 text-xs font-bold transition-all shadow-sm">
+            Copy DM Template
+          </button>
+          <button onclick="copyDiscord()" class="flex-1 md:flex-initial btn-brand px-5 py-2.5 rounded-xl text-white text-xs font-bold shadow-sm whitespace-nowrap">
+            Copy @2aura.
+          </button>
+        </div>
+      </div>
+
+      <!-- Customizable assets reminder checklist -->
+      <div class="mt-6 pt-5 border-t border-slate-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-slate-500 gap-2">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="font-semibold text-slate-700">Want to embed direct samples?</span>
+          <span>Send your YouTube link, 2-3 thumbnail images, or your custom Discord invite anytime.</span>
+        </div>
+        <span class="text-sky-600 font-medium">Updated 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="w-full max-w-5xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 border-t border-slate-200">
+    <div class="flex items-center gap-2">
+      <span class="font-bold text-slate-800">2aura</span>
+      <span>&bull;</span>
+      <span>Roblox Creator, Editor & Tester</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <button onclick="copyDiscord()" class="hover:text-slate-900 font-medium transition-colors">
+        Discord: <span class="font-mono-code font-semibold text-sky-700">@2aura.</span>
+      </button>
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-slate-900 transition-colors">
+        Back to top &uarr;
+      </button>
+    </div>
+  </footer>
+
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-10 opacity-0 pointer-events-none transition-all duration-200 ease-out">
+    <div class="bg-white border border-slate-200 px-4 py-3 rounded-xl shadow-lg shadow-slate-200/80 text-xs text-slate-900 flex items-center gap-2.5">
+      <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+      <span id="toast-message">Copied <strong>@2aura.</strong> to clipboard!</span>
+    </div>
+  </div>
+
+  <!-- Commission Quick Modal -->
+  <div id="modal" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-2xl max-w-md w-full p-6 text-left">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <h3 class="text-base font-bold text-slate-900">Commission @2aura.</h3>
+        <button onclick="closeCommissionModal()" class="text-slate-400 hover:text-slate-700">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mt-4 text-xs text-slate-600 space-y-3">
+        <p>You can contact me on Discord for inquiries. Copy the template below to paste straight into your DM:</p>
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl font-mono-code text-[11px] text-slate-700 leading-relaxed select-all">
+          Hey 2aura, reaching out for [Thumbnail / Video Editing / UI / Testing / Promo]. Here is my project info: ...
+        </div>
+      </div>
+
+      <div class="mt-5 flex items-center justify-end gap-2.5">
+        <button onclick="copyCommissionTemplate()" class="px-4 py-2 rounded-lg bg-sky-50 text-sky-700 font-semibold text-xs border border-sky-200 hover:bg-sky-100 transition-colors">
+          Copy Template
+        </button>
+        <button onclick="copyDiscord(); closeCommissionModal();" class="btn-brand px-4 py-2 rounded-lg text-white font-semibold text-xs transition-colors">
+          Copy Discord Tag
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.innerHTML = msg;
+      toast.classList.remove('translate-y-10', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        toast.classList.add('translate-y-10', 'opacity-0', 'pointer-events-none');
+      }, 2400);
+    }
+
+    function copyToClipboard(text, successMessage) {
+      const el = document.createElement('textarea');
+      el.value = text;
+      el.style.position = 'fixed';
+      el.style.opacity = '0';
+      document.body.appendChild(el);
+      el.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMessage);
+      } catch (err) {
+        console.error('Failed to copy', err);
+      }
+      document.body.removeChild(el);
+    }
+
+    function copyDiscord() {
+      copyToClipboard('@2aura.', 'Copied <strong>@2aura.</strong> to clipboard!');
+    }
+
+    function copyCommissionTemplate() {
+      const template = "Hey 2aura, reaching out for [Thumbnail / Video Editing / UI / Testing / Promo]. Here is my project info: ";
+      copyToClipboard(template, 'Commission DM template copied!');
+    }
+
+    function openCommissionModal() {
+      const modal = document.getElementById('modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeCommissionModal() {
+      const modal = document.getElementById('modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  </script>
+</body>
+</html>
